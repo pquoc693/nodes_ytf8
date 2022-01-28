@@ -7,17 +7,14 @@
     "beautiful": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --inspect src/index.js",
-    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/"
+    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 2 --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 2 --write",
+    "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
     "express": "^4.17.2",
